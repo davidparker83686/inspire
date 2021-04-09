@@ -1,10 +1,15 @@
-import Value from "./Models/Value.js"
+import Quote from "./Models/Quote.js"
+import ToDo from "./Models/ToDo.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
+
 class AppState extends EventEmitter {
-  /** @type {Value[]} */
-  values = []
+
+  weathers = []
+  quotes = []
+  images = []
+  todos = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
