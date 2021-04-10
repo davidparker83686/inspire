@@ -7,13 +7,31 @@ function _draw() {
   let template = ''
   ProxyState.quotes.forEach(q => {
     template +=
-    `
+      `
         <div>
-        <h3>${q.content}</h3>
-        <h5>${q.author}</h5>
+          <div onmouseover="app.qoutesController.showtext(x)">
+            <h5>${q.content}</h5>
+              <div class="mb-0 mb-md-3" id="hiddenttext">
+                <span>${q.author}</span>
+            </div>
+          </div>
         </div>` })
   document.getElementById('quote').innerHTML = template
 }
+
+function showtext(x) {
+  let textElem = document.getElementById('hiddentext')
+
+  if (textElem.classList.contains('d-none')) {
+    textElem.classList.add('d-block')
+    textElem.classList.remove('d-none')
+  } else {
+    textElem.classList.add('d-none')
+    textElem.classList.remove('d-block')
+  }
+}
+
+
 
 //Public
 export default class QuotesController {

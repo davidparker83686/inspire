@@ -13,49 +13,62 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+        <nav class="navbar navbar-expand" style="justify-content:flex-end">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">inspire</span>
+                <span class="ml-2" id="weather">weather</span>
             </a>
         </nav>
     </header>
 
 
 
-    <main>
-        <div id="weather"></div>
-        <div id="quote"></div>
+    <main class="clock-placement">
+
+
         <div id="image"></div>
 
 
-        <div class="card rounded" style="width: 18rem;">
-            <div class="card-body">
-                <div id="todo"></div>
-                <div>
-                    <form class="d-flex" onsubmit="app.toDosController.addToDos()" required min="3" max="20">
-                        <input type="text" name="description" class="form-control shadow-none bg-none border-none"
-                            placeholder="Add Task.." aria-describedby="helpId" required minlength="3" maxlength="15">
-                        <button type="submit" class="btn btn-none" title='add task'><b>+</b></button>
-                    </form>
+
+
+
+        <div id="clock">clock</div>
+
+        <div>
+            <h1> What is your main focus for the day?</h1>
+        </div>
+    </main>
+
+
+
+
+
+    <footer class="container-fluid">
+
+
+        <div class="row card-placement">
+            <div class="col-md-2  mr-md-3 card rounded bg-white " style="width: 18rem;">
+                <div class="card-body">
+                    <div id="todo"></div>
+                    <div>
+                        <form class="d-flex" onsubmit="app.toDosController.addToDos()" required min="3" max="20">
+                            <input type="text" name="description" class="form-control shadow-none bg-none border-none"
+                                placeholder="Add Task.." aria-describedby="helpId" required minlength="3"
+                                maxlength="15">
+                            <button type="submit" class="btn btn-none" title='add task'><b>+</b></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
 
 
 
-
-        <div id="clock"></div>
-    </main>
-
-
-
-    <footer class="container-fluid bg-dark text-light">
-        <div class="row text-center">
-            <div class="col">
-                <p m-0><small>Made with love by Codeworks</small></p>
+        <div class="row " style="justify-content: space-evenly">
+            <div class="col-md-12 mt-3 mt-md-0  text-center">
+                <div id="quote"></div>
             </div>
         </div>
+
     </footer>
 
 
@@ -72,6 +85,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+
+
 
     <script src="app/main.js" type="module"></script>
 </body>

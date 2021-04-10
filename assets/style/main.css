@@ -10696,3 +10696,40 @@ main {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+
+
+
+.normaltext{
+
+}
+.normaltext:hover{
+
+
+}
+
+.hiddentext{
+
+}
+
+
+
+.card-placement{
+  justify-content:flex-end ;
+}
+
+
+@media screen and (max-width:760px){
+.card-placement{
+  justify-content: center;
+}
+}
+
+
+.clock-placement{
+  text-align: center;
+  /* line-height: 370px; */
+  /* height: 400px; */
+  justify-items: center;
+} 
