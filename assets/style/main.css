@@ -10733,3 +10733,30 @@ main {
   /* height: 400px; */
   justify-items: center;
 } 
+
+
+.clock-text{
+font-size: 10rem;
+}
+.ampm{
+font-size: 5rem;
+}
+
+@media screen and (max-width:760px){
+.clock-text{
+  font-size: 5rem;
+}
+}
+@media screen and (max-width:760px){
+.ampm{
+  font-size: 2rem;
+}
+}
+.greeting{
+font-size: 5rem;
+}
+
+
+.weather{
+  text-align:end;
+}

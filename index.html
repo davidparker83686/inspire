@@ -13,11 +13,10 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand" style="justify-content:flex-end">
-            <a class="navbar-brand" href="#">
-                <span class="ml-2" id="weather">weather</span>
-            </a>
-        </nav>
+        <div class="weather mr-md-4">
+
+            <span class="ml-2" id="weather">weather</span>
+        </div>
     </header>
 
 
@@ -31,10 +30,17 @@
 
 
 
-        <div id="clock">clock</div>
-
         <div>
-            <h1> What is your main focus for the day?</h1>
+            <span class="clock-text" id="clock">00:00</span>
+            <span class="ampm" id="amORpm">AM</span>
+        </div>
+
+        <div class="greeting">
+            <span> Good <span id="timeOfDay"> Day </span> , <span> David</span></span>
+        </div>
+
+        <div class="d-none d-md-block">
+            <h3> What is your main focus for the day?</h3>
         </div>
     </main>
 
@@ -48,6 +54,7 @@
         <div class="row card-placement">
             <div class="col-md-2  mr-md-3 card rounded bg-white " style="width: 18rem;">
                 <div class="card-body">
+                    <div class="mb-2"><b>ToDo List </b> <span id="toDoComplete">x/x</span></div>
                     <div id="todo"></div>
                     <div>
                         <form class="d-flex" onsubmit="app.toDosController.addToDos()" required min="3" max="20">

@@ -8,8 +8,6 @@ export default class ToDo {
         this.user = user
         this.description = description
     }
-
-
     get Template() {
         return `
                     <div class="form-check">
@@ -18,6 +16,9 @@ export default class ToDo {
                     </div>
                     `
     }
+
+
+
 }
 
 

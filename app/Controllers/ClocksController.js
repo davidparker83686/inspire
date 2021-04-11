@@ -1,29 +1,51 @@
-import { ProxyState } from "../AppState.js";
-import { valuesService } from "../Services/AxiosService.js";
+
 
 
 //Private
-function _draw() {
-  let values = ProxyState.values;
-  let template = ''
-  values.forEach(v => template += v.Template)
-  document.getElementById("app").innerHTML = /*html*/`
-  <button className="btn btn-info" onclick="app.valuesController.addValue()">Add Value</button>  
-  <div className="card-columns values">
-      ${template}
-  </div>
-  `
+
+setInterval(time, 500);
+
+function time() {
+  let time = new Date();
+  let hour = time.getHours();
+  let minute = time.getMinutes();
+  let amORpm = 'AM'
+  let timeOfDay = 'Afternoon'
+
+  if (hour > 12) {
+    amORpm = 'PM'
+  }
+
+  if (hour < 13) {
+    timeOfDay = 'Morning'
+  } else if (hour > 19) {
+    timeOfDay = 'Evening'
+  }
+
+
+  if (hour > 12) {
+    hour = hour - 12
+  }
+  if (hour == 0) {
+    hour = 12
+  }
+  if (minute < 10) {
+    minute = '0' + minute
+  }
+
+
+
+  document.getElementById('clock').innerHTML = `${hour}:${minute}`
+  document.getElementById('amORpm').innerHTML = amORpm
+  document.getElementById('timeOfDay').innerHTML = timeOfDay
+
+  // document.getElementById("clock").innerHTML = hour + ':' + minute + '' + amORpm 
+
 }
 
 //Public
-export default class ValuesController {
+export default class ClocksController {
   constructor() {
-    ProxyState.on("values", _draw);
-    _draw()
+    time()
   }
-
-  addValue() {
-    valuesService.addValue()
-  }
-
 }

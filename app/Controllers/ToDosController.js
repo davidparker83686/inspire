@@ -20,6 +20,7 @@ export default class ToDosController {
   }
 
   addToDos() {
+    console.log('cathair')
     window.event.preventDefault()
     let form = window.event.target
     let rawToDo = {
