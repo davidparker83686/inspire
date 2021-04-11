@@ -1,29 +1,39 @@
 import { ProxyState } from "../AppState.js";
-import { valuesService } from "../Services/AxiosService.js";
+import { imagesService } from "../Services/ImagesService.js";
 
 
 //Private
 function _draw() {
-  let values = ProxyState.values;
   let template = ''
-  values.forEach(v => template += v.Template)
-  document.getElementById("app").innerHTML = /*html*/`
-  <button className="btn btn-info" onclick="app.valuesController.addValue()">Add Value</button>  
-  <div className="card-columns values">
-      ${template}
-  </div>
-  `
+  ProxyState.images.forEach(i => {
+    template +=
+      `
+  "url( ${i.url}  )"
+  ` })
+  // document.body.style.backgroundImage = 'url${ i.url }'
+  document.getElementById('image').innerHTML = template
 }
+
+
+
+
 
 //Public
-export default class ValuesController {
+export default class ImagesController {
   constructor() {
-    ProxyState.on("values", _draw);
-    _draw()
+    ProxyState.on("images", _draw);
+
+
+    this.getImage()
   }
 
-  addValue() {
-    valuesService.addValue()
-  }
 
+  async getImage() {
+    try {
+      await imagesService.getImage()
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
+
