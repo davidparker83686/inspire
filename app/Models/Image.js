@@ -9,9 +9,8 @@ export default class Image {
     }
 
     get Template() {
-
-        return /*html*/`
-
+        return `
+        url(${this.url})
         `
     }
 }

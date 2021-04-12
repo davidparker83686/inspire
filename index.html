@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <title>inspire</title>
+
 </head>
 
-<body>
+<body class="body-background  text-white" id="body-background">
+
     <header>
         <div class="weather mr-md-4">
-
             <span class="ml-2" id="weather">weather</span>
         </div>
     </header>
@@ -22,13 +25,6 @@
 
 
     <main class="clock-placement">
-
-
-        <div id="image"></div>
-
-
-
-
 
         <div>
             <span class="clock-text" id="clock">00:00</span>
@@ -48,11 +44,10 @@
 
 
 
-    <footer class="container-fluid">
-
+    <footer class="container-fluid ">
 
         <div class="row card-placement">
-            <div class="col-md-2  mr-md-3 card rounded bg-white " style="width: 18rem;">
+            <div class="col-md-2  mr-md-3 card rounded card-background " style="width: 18rem;">
                 <div class="card-body">
                     <div class="mb-2"><b>ToDo List </b> <span id="toDoComplete">x/x</span></div>
                     <div id="todo"></div>
@@ -69,10 +64,11 @@
         </div>
 
 
-
         <div class="row " style="justify-content: space-evenly">
             <div class="col-md-12 mt-3 mt-md-0  text-center">
-                <div id="quote"></div>
+                <div onmouseover="show()" onmouseout="show()" id="quote">quote
+                    <!-- <div onmouseover="app.quotesController.show()" onmouseout="app.quotesController.show()" id="quote">quote -->
+                </div>
             </div>
         </div>
 
@@ -92,6 +88,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <script>
+        function show() {
+            let authorElem = document.getElementById('author')
+
+            if (authorElem.classList.contains('d-none')) {
+                authorElem.classList.add('d-block')
+                authorElem.classList.remove('d-none')
+            } else {
+                authorElem.classList.add('d-none')
+                authorElem.classList.remove('d-block')
+            }
+        }
+    </script>
 
 
 

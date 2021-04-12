@@ -8,28 +8,28 @@ function _draw() {
   ProxyState.quotes.forEach(q => {
     template +=
       `
-        <div>
-          <div onmouseover="app.qoutesController.showtext(x)">
-            <h5>${q.content}</h5>
-              <div class="mb-0 mb-md-3" id="hiddenttext">
-                <span>${q.author}</span>
-            </div>
+          <div>
+            <div><h5>${q.content}</h5></div>
+            <div><span id="author" class='d-none'>${q.author}</span></div>
           </div>
-        </div>` })
+      ` })
   document.getElementById('quote').innerHTML = template
 }
 
-function showtext(x) {
-  let textElem = document.getElementById('hiddentext')
+// function show() {
+//   let authorElem = document.getElementById('author')
 
-  if (textElem.classList.contains('d-none')) {
-    textElem.classList.add('d-block')
-    textElem.classList.remove('d-none')
-  } else {
-    textElem.classList.add('d-none')
-    textElem.classList.remove('d-block')
-  }
-}
+//   if (authorElem.classList.contains('d-none')) {
+//     authorElem.classList.add('d-block')
+//     authorElem.classList.remove('d-none')
+//   } else {
+//     authorElem.classList.add('d-none')
+//     authorElem.classList.remove('d-block')
+//   }
+// }
+
+
+
 
 
 

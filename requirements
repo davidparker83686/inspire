@@ -1,19 +1,13 @@
+###Image: The image is required, however the additional data is optional
 ####The data in the Todos persists on reload
 ###When adding a Todo the page does not reload
 ###A clock shows the accurate time in the middle of the screen and updates appropriately
 ###Todo's can be added to a list (POST)
 ###Todo's can be removed (DELETE)
+###The image should be on large display with at least one other element positioned over the top of the image.
+##Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
+###Quote: Quote always displayed and Author reveals on hover
+####Completed Todo's checkbox remains checked on reload (hint: checked attribute)
+####Todo's can be marked complete (PUT)
 
-
-
-Weather: The temp is displayed in Fahrenheit/Celsius with a click toggling between
-
-Quote: Quote always displayed and Author reveals on hover
-
-Image: The image is required, however the additional data is optional
-
-The image should be on large display with at least one other element positioned over the top of the image.
-
-Completed Todo's checkbox remains checked on reload (hint: checked attribute)
-Todo's can be marked complete (PUT)
 Todo: Todo's are shown on the page including a count of remaining tasks to complete

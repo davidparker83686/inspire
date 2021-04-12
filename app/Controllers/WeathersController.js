@@ -4,15 +4,9 @@ import { weathersService } from "../Services/WeathersService.js";
 
 //Private
 function _draw() {
+  let weather = ProxyState.weathers;
   let template = ''
-  ProxyState.weathers.forEach(w => {
-    template +=
-      `
-
-    <div> <span>${w.icon}</span>     <span onclick="app.weathersController.conversion()">${w.temp}</span>  </div>
-    <div>${w.name}</div>
-    ` })
-
+  weather.forEach(w => template += w.Template)
   document.getElementById('weather').innerHTML = template
 }
 
@@ -33,4 +27,54 @@ export default class WeathersController {
       console.error(error)
     }
   }
+
+  fahToCel() {
+    let fah = document.getElementById('tempF')
+    let cel = document.getElementById('tempC')
+
+    if (fah.classList.contains('d-none')) {
+      fah.classList.add('d-block')
+      fah.classList.remove('d-none')
+      cel.classList.add('d-none')
+      cel.classList.remove('d-block')
+
+
+    } else {
+      fah.classList.add('d-none')
+      fah.classList.remove('d-block')
+      cel.classList.add('d-block')
+      cel.classList.remove('d-none')
+    }
+  }
+
+  celToFah() {
+    let cel = document.getElementById('tempC')
+    let fah = document.getElementById('tempF')
+
+    if (cel.classList.contains('d-none')) {
+      cel.classList.add('d-block')
+      cel.classList.remove('d-none')
+      fah.classList.add('d-none')
+      fah.classList.remove('d-block')
+
+
+    } else {
+      cel.classList.add('d-none')
+      cel.classList.remove('d-block')
+      fah.classList.add('d-block')
+      fah.classList.remove('d-none')
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+
 }
+

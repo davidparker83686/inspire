@@ -11,6 +11,8 @@ class AppState extends EventEmitter {
   weathers = []
   quotes = []
   images = []
+
+  /** @type {ToDo[]} */
   todos = []
 }
 

@@ -4,16 +4,12 @@ import { imagesService } from "../Services/ImagesService.js";
 
 //Private
 function _draw() {
-  let template = ''
-  ProxyState.images.forEach(i => {
-    template +=
-      `
-  "url( ${i.url}  )"
-  ` })
-  // document.body.style.backgroundImage = 'url${ i.url }'
-  document.getElementById('image').innerHTML = template
-}
 
+  let bodyBackground = ProxyState.images;
+  let template = ''
+  bodyBackground.forEach(i => template += i.Template)
+  document.getElementById("body-background").style.backgroundImage = template
+}
 
 
 

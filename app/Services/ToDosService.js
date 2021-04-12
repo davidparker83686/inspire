@@ -4,12 +4,9 @@ import { todoApi } from "../Services/AxiosService.js"
 
 class ToDosService {
   async addToDos(rawToDo) {
-    console.log('hello')
     let res = await todoApi.post('', rawToDo)
     ProxyState.todos = [...ProxyState.todos, new ToDo(res.data)]
-    console.log(ProxyState.todos);
   }
-
 
   async getToDos() {
     let res = await todoApi.get()
@@ -21,11 +18,23 @@ class ToDosService {
     ProxyState.todos = ProxyState.todos.filter(todos => todos.id != id)
   }
 
+  async toDosCompleted(id) {
 
+    let todoz = ProxyState.todos.find(t => t.id == id)
 
+    if (todoz.completed == true) {
+      todoz.completed = false
+    } else if (todoz.completed == false) {
+      todoz.completed = true
+    }
+
+    await todoApi.put('' + id, todoz)
+    ProxyState.todos = ProxyState.todos
+  }
 }
 
 
 
-export const toDosService = new ToDosService();
 
+
+export const toDosService = new ToDosService();

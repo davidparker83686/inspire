@@ -11,6 +11,25 @@ function _draw() {
   document.getElementById("todo").innerHTML = template
 }
 
+
+
+
+document.getElementById("toDoComplete").innerHTML = `${totalCompleted()} ${total()}`
+function total() {
+  let total = ProxyState.todos
+
+  return total.length
+}
+
+function totalCompleted() {
+  let totalCompleted = ProxyState.todos.filter(t => t.completed == true)
+  return totalCompleted.length
+}
+
+
+
+
+
 //Public
 export default class ToDosController {
   constructor() {
@@ -38,22 +57,22 @@ export default class ToDosController {
     }
   }
 
-
   async getToDos() {
     try {
-
       await toDosService.getToDos()
-
     } catch (error) {
       console.error(error)
     }
   }
 
+  async toDosCompleted(id) {
+    try {
+      await toDosService.toDosCompleted(id)
 
-
-  // totalCompleted(id) {
-  //   listsService.totalCompleted(id)
-  // }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
 
 }

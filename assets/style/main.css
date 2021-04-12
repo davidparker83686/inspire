@@ -10701,17 +10701,6 @@ main {
 
 
 
-.normaltext{
-
-}
-.normaltext:hover{
-
-
-}
-
-.hiddentext{
-
-}
 
 
 
@@ -10724,6 +10713,11 @@ main {
 .card-placement{
   justify-content: center;
 }
+}
+
+.card-background{
+  background-color: rgba(255, 255, 255, 0.884);
+  color:black;
 }
 
 
@@ -10760,3 +10754,19 @@ font-size: 5rem;
 .weather{
   text-align:end;
 }
+
+
+.body-background{
+  background-image: url(https://splashbase.s3.amazonaws.com/unsplash/large/1cevKKR);
+  /* min-height: 80vh; */
+  background-size: cover;
+  background-position: center;
+  font-family: 'Cinzel', serif;
+
+}
+
+
+
+
+
+
