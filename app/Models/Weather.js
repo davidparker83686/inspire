@@ -7,13 +7,11 @@ export default class Weather {
   }
   get Template() {
     return `
-    <div>
+    <div><b>
      <span class="d-block" id="tempF" onclick="app.weathersController.fahToCel()" style="cursor: pointer"> ${this.convertFah()}F</span>
      <span class="d-none" id="tempC" onclick="app.weathersController.celToFah()" style="cursor: pointer"> ${this.convertCel()}C</span>
-    </div>
-   <div>
-    <p> ${this.name}</p>
-    </div>
+    <span> ${this.name}</span>
+    </b></div>
     `
   }
 

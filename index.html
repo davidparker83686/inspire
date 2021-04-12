@@ -49,8 +49,14 @@
         <div class="row card-placement">
             <div class="col-md-2  mr-md-3 card rounded card-background " style="width: 18rem;">
                 <div class="card-body">
-                    <div class="mb-2"><b>ToDo List </b> <span id="toDoComplete">x/x</span></div>
-                    <div id="todo"></div>
+                    <div class="mb-2" style="cursor: pointer" onclick="app.toDosController.seeTodos()"><b>ToDo List </b>
+
+                        <span id="allToDos">0</span>
+
+                    </div>
+
+                    <div class="d-block" id="todo"></div>
+
                     <div>
                         <form class="d-flex" onsubmit="app.toDosController.addToDos()" required min="3" max="20">
                             <input type="text" name="description" class="form-control shadow-none bg-none border-none"

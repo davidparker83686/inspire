@@ -9,11 +9,20 @@ function _draw() {
   if (todos.length == 0) { template += '<div class="col text-center text-white"><p><em>no todos! :)</em><p></div>' }
   todos.forEach(p => template += p.Template)
   document.getElementById("todo").innerHTML = template
+
+
+
 }
 
 
 
-// document.getElementById("toDoComplete").innerHTML = `${ProxyState.todos.length}`
+
+
+// function total() {
+//   let total = peanut
+
+//   document.getElementById("toDoComplete").innerHTML = total
+// }
 
 // function total() {
 //   let templateT=''
@@ -53,6 +62,7 @@ export default class ToDosController {
   constructor() {
     ProxyState.on("todos", _draw);
 
+
     this.getToDos()
   }
 
@@ -89,6 +99,28 @@ export default class ToDosController {
 
     } catch (error) {
       console.error(error)
+    }
+  }
+
+
+
+
+
+
+
+  seeTodos() {
+    let seeToDo = document.getElementById('todo')
+
+    if (seeToDo.classList.contains('d-none')) {
+      seeToDo.classList.add('d-block')
+      seeToDo.classList.remove('d-none')
+
+
+
+    } else {
+      seeToDo.classList.add('d-none')
+      seeToDo.classList.remove('d-block')
+
     }
   }
 
