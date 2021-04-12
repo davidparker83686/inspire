@@ -13,19 +13,37 @@ function _draw() {
 
 
 
+// document.getElementById("toDoComplete").innerHTML = `${ProxyState.todos.length}`
 
-document.getElementById("toDoComplete").innerHTML = `${totalCompleted()} ${total()}`
-function total() {
-  let total = ProxyState.todos
+// function total() {
+//   let templateT=''
+//   ProxyState.todos.forEach(q => {
+//     template +=
+//       `
+// ${q.content}
 
-  return total.length
-}
+//       ` })
 
-function totalCompleted() {
-  let totalCompleted = ProxyState.todos.filter(t => t.completed == true)
-  return totalCompleted.length
-}
+// }
 
+// function totalCompleted() {
+//   let totalCompleted = ProxyState.todos.filter(t => t.completed == true)
+//   return totalCompleted.length
+// }
+
+
+
+
+let template = ''
+ProxyState.quotes.forEach(q => {
+  template +=
+    `
+          <div>
+            <div><h5>${q.content}</h5></div>
+            <div><span id="author" class='d-none'>${q.author}</span></div>
+          </div>
+      ` })
+document.getElementById('quote').innerHTML = template
 
 
 
